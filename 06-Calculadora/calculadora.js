@@ -15,7 +15,11 @@ const calcular = () => {
         const numeroAtual = parseFloat(display.textContent.replace('.','').replace(',', '.'));
         novoNumero = true;
         const resultado = eval(`${numeroAnterior}${operador}${numeroAtual}`);
-        atualizarDisplay(resultado);
+        if (resultado < 1000000000000) {
+            atualizarDisplay(resultado); 
+        } else {
+             atualizarDisplay("Erro!!!");
+        }  
     }
 };
 
